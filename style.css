@@ -1,0 +1,136 @@
+
+body {
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "BIZ UDPGothic",
+    Meiryo,
+    sans-serif;
+    padding-top: 2em;
+}
+article {
+    display: flex;
+    justify-content: center;
+}
+.status {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+.status table {
+    width: 100%;
+}
+.status td:first-child {
+    text-align: left;
+}
+.status td:last-child {
+    text-align: right;
+}
+.black-turn {
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+}
+.white-turn {
+    text-align: center;
+    color: #000;
+    border: 1px solid #000;
+}
+.board {
+    border-top: 10px #804012 solid;
+    border-right: 10px #66330e solid;
+    border-bottom: 10px #4d260b solid;
+    border-left: 10px #994c15 solid;
+}
+.board table {
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    background-color: #008000;
+}
+.board td {
+    border: 1px solid #000;
+    width: 12%;
+}
+.board td a {
+    display: block;
+}
+.board td a:hover {
+    background-color: rgba(255,255,255 ,.5);
+}
+.board a::before, .board span::before{
+    content: "";
+    display: inline-block; 
+    padding-top: 92%;
+}
+.board span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.board span::after {
+    content: "";
+    display: inline-block;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.black::after {
+    background-color: #111;
+    box-shadow: 2px 2px 1px rgba(0,0,0, .7);
+}
+.white::after {
+    background-color: #fff;
+    box-shadow: 2px 2px 1px rgba(0,0,0, .7);
+}
+.board p {
+    font-weight: bold;
+}
+.buttons {
+    margin-top: 30px;
+}
+.buttons button {
+    font-size: 1.2em;
+}
+.buttons table {
+    width: 100%;
+    text-align: center;
+}
+.result {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f00;
+    border: 1px solid #f00;
+}
+
+@media all and (min-width: 1024px) {
+    .container {
+        width: 100%;
+        max-width: 540px;
+    }
+}
+@media all and (max-width: 1024px) {
+    .container {
+        width: 100%;
+        margin: 0 10px;
+    }
+    .board a::before, .board span::before{
+        content: "";
+        display: inline-block; 
+        padding-top: 94%;
+    }
+    .board td a {
+        background-color: rgba(255,255,255 ,.5);
+    }
+    .status, .buttons button {
+        font-size: 2em;
+    }
+}
